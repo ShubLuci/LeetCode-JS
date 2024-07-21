@@ -35,51 +35,22 @@ var romanToInt = function(s) {
         'L': 50,
         'C': 100,
         'D': 500,
-        'M': 1000
+        'M': 1000,
+        'IV': 4,
+        'IX': 9,
+        'XL': 40,
+        'XC': 90,
+        'CD': 400,
+        'CM': 900
     };
     let sum = 0;
     for (let i = 0;i<s.length;i++){
-        switch (s[i]){
-            case 'I':
-                if(i!=s.length && s[i+1]=='V'){
-                    sum += 4;
-                    i++;
-                }
-                else if(i!=s.length && s[i+1]=='X'){
-                    sum += 9;
-                    i++;
-                } 
-                else
-                    sum += obj[s[i]];
-                break;
-            case 'X':
-                if(i!=s.length && s[i+1]=='L'){
-                    sum += 40;
-                    i++;
-                }
-                else if(i!=s.length && s[i+1]=='C'){
-                    sum += 90;
-                    i++;
-                }
-                else
-                    sum += obj[s[i]];
-                break;
-            case 'C':
-                if(i!=s.length && s[i+1]=='D'){
-                    sum+= 400;
-                    i++;
-                }
-                else if(i!=s.length && s[i+1]=='M'){
-                    sum+= 900;
-                    i++;
-                } 
-                else
-                    sum += obj[s[i]];
-                break;
-            default:
-                sum += obj[s[i]];
-                break;   
+        if(obj[s[i].concat(s[i+1])]!=undefined){
+            sum += obj[s[i].concat(s[i+1])];
+            i++;
         }
+        else
+            sum += obj[s[i]];
     }
     return sum;
 };
