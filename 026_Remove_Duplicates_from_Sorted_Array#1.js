@@ -72,4 +72,4 @@ var removeDuplicates = function(nums) {
     return nums.length;
 };
 
-removeDuplicates(nums);
+console.log(removeDuplicates(nums));
