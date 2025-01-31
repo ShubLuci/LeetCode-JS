@@ -2,7 +2,7 @@
 
 Link: https://leetcode.com/problems/single-number/description/
 
-Title: Single Number
+Title: Single Number (Via temp array)
 
 Question: 
 
